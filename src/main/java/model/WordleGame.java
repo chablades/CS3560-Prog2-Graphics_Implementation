@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +13,7 @@ public class WordleGame {
     private final String secretWord;
     private boolean gameOver;
     private boolean hasWon;
+    private final Dictionary dictionary;
 
     public WordleGame(String word) {
         this.secretWord = word.toUpperCase();
@@ -19,9 +21,11 @@ public class WordleGame {
         this.attemptsMade = 0;
         this.gameOver = false;
         this.hasWon = false;
+        this.dictionary = new Dictionary();
     }
 
     public void runGame() {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wordle Game");
         System.out.println("** = Green (Word is in the right place), * = Yellow (Word exists but not in right place");
@@ -30,15 +34,8 @@ public class WordleGame {
             System.out.print("Enter your guess: ");
             String guess = scanner.nextLine().trim().toUpperCase();
 
-            if (guess.length() != secretWord.length()) {
-                System.out.println("Invalid guess length. Try again.");
+            if(!isValidWord(guess))
                 continue;
-            }
-
-            if (inGuessList(guess)) {
-                System.out.println(guess + " has already been guessed. Try again.");
-                continue;
-            }
 
             submitGuess(guess);
 
@@ -107,5 +104,24 @@ public class WordleGame {
             }
         }
         return false;
+    }
+
+    public boolean isValidWord(String guess) {
+        if (guess.length() != secretWord.length()) {
+            System.out.println("Invalid guess length. Try again.");
+            return false;
+        }
+
+        if (inGuessList(guess)) {
+            System.out.println(guess + " has already been guessed. Try again.");
+            return false;
+        }
+
+        if (!dictionary.isValidWord(guess)){
+            System.out.println("The word is not in this dictionary. Try again.");
+            return false;
+        }
+
+        return true;
     }
 }

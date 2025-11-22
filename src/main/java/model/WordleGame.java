@@ -1,55 +1,49 @@
 package model;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class WordleGame {
-    private static int maxAttempts = 6;
-    private int attemptsMade = 0;
-    private final List<String> guessHistory;
-    private final String secretWord;
-    private boolean gameOver;
-    private boolean hasWon;
+    private GameState state;
     private final Dictionary dictionary;
 
-    public WordleGame(String word) {
-        this.secretWord = word.toUpperCase();
-        this.guessHistory = new ArrayList<>();
-        this.attemptsMade = 0;
-        this.gameOver = false;
-        this.hasWon = false;
+    public WordleGame(String secretWord) {
+        this.state = new GameState(secretWord, 6); // default maxAttempts = 6
         this.dictionary = new Dictionary();
     }
 
-    public void runGame() {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wordle Game");
-        System.out.println("** = Green (Word is in the right place), * = Yellow (Word exists but not in right place");
-        while (!gameOver) {
-            printCurrentBoard();
-            System.out.print("Enter your guess: ");
-            String guess = scanner.nextLine().trim().toUpperCase();
-
-            if(!isValidWord(guess))
-                continue;
-
-            submitGuess(guess);
-
-            if (hasWon) {
-                printCurrentBoard();
-                System.out.println("Congratulations! You guessed the word: " + secretWord);
-            }
-        }
-        scanner.close();
+    // --- Core game loop methods ---
+    public void submitGuess(String guess) {
+        guess = guess.toUpperCase();
+        state.addGuess(guess);
     }
 
+    public boolean isValidWord(String guess) {
+        guess = guess.toUpperCase();
 
-    private String formatFeedback(String guess) {
+        if (guess.length() != state.getSecretWord().length()) {
+            System.out.println("Invalid guess length. Try again.");
+            return false;
+        }
+
+        if (inGuessList(guess)) {
+            System.out.println(guess + " has already been guessed. Try again.");
+            return false;
+        }
+
+        if (!dictionary.isValidWord(guess)) {
+            System.out.println("The word is not in this dictionary. Try again.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // --- Feedback formatting ---
+    public String formatFeedback(String guess) {
         StringBuilder result = new StringBuilder();
+        String secretWord = state.getSecretWord();
+
         for (int i = 0; i < guess.length(); i++) {
             char g = guess.charAt(i);
             if (g == secretWord.charAt(i)) {
@@ -63,42 +57,9 @@ public class WordleGame {
         return result.toString().trim();
     }
 
-
-    public void printCurrentBoard() {
-        for (String guess : guessHistory) {
-            System.out.println(formatFeedback(guess));
-        }
-        for (int i = guessHistory.size(); i < maxAttempts; i++) {
-            System.out.println("_ _ _ _ _");
-        }
-    }
-
-    public void submitGuess(String guess) {
-        guessHistory.add(guess);
-        attemptsMade++;
-        if (guess.equals(secretWord)) {
-            hasWon = true;
-            gameOver = true;
-        } else if (attemptsMade >= maxAttempts) {
-            System.out.println("Game over. The word was: " + secretWord);
-            gameOver = true;
-        }
-    }
-
-    public static int getMaxAttempts() {
-        return maxAttempts;
-    }
-
-    public static void setMaxAttempts(int maxAttempts) {
-        WordleGame.maxAttempts = maxAttempts;
-    }
-
-    public String getSecretWord() {
-        return secretWord;
-    }
-
+    // --- Helpers ---
     public boolean inGuessList(String guess) {
-        for (String pastGuess : guessHistory) {
+        for (String pastGuess : state.getGuessHistory()) {
             if (Objects.equals(pastGuess, guess)) {
                 return true;
             }
@@ -106,22 +67,15 @@ public class WordleGame {
         return false;
     }
 
-    public boolean isValidWord(String guess) {
-        if (guess.length() != secretWord.length()) {
-            System.out.println("Invalid guess length. Try again.");
-            return false;
-        }
+    // --- Getters for UI/Controller ---
+    public List<String> getGuessHistory() { return state.getGuessHistory(); }
+    public String getSecretWord() { return state.getSecretWord(); }
+    public int getAttemptsMade() { return state.getAttemptsMade(); }
+    public int getMaxAttempts() { return state.getMaxAttempts(); }
+    public boolean isGameOver() { return state.isGameOver(); }
+    public boolean hasWon() { return state.hasWon(); }
 
-        if (inGuessList(guess)) {
-            System.out.println(guess + " has already been guessed. Try again.");
-            return false;
-        }
-
-        if (!dictionary.isValidWord(guess)){
-            System.out.println("The word is not in this dictionary. Try again.");
-            return false;
-        }
-
-        return true;
-    }
+    // --- Persistence support ---
+    public GameState getState() { return state; }
+    public void setState(GameState newState) { this.state = newState; }
 }

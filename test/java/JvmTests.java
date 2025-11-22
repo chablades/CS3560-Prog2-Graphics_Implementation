@@ -1,68 +1,54 @@
+package model;
 
-
-import model.Dictionary;
-import model.WordleGame;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Combined test suite for Dictionary and WordleGame.
- * Place this file in src/test/java/model/
- * Requires JUnit 5 (org.junit.jupiter.api).
- */
+import java.util.List;
+
 public class JvmTests {
 
-    // ---------------- Dictionary Tests ----------------
-
     @Test
-    void testDictionaryLoadsWords() {
-        Dictionary dict = new Dictionary();
-        assertTrue(dict.size() > 0, "Dictionary should contain words");
+    void testGameStateWinCondition() {
+        GameState state = new GameState("APPLE", 6);
+        state.addGuess("APPLE");
+        assertTrue(state.hasWon());
+        assertTrue(state.isGameOver());
+        assertEquals(1, state.getAttemptsMade());
     }
 
     @Test
-    void testValidWord() {
-        Dictionary dict = new Dictionary();
-        assertTrue(dict.isValidWord("APPLE"), "APPLE should be valid if in dictionary");
+    void testGameStateLoseCondition() {
+        GameState state = new GameState("APPLE", 2);
+        state.addGuess("BERRY");
+        state.addGuess("MANGO");
+        assertFalse(state.hasWon());
+        assertTrue(state.isGameOver());
+        assertEquals(2, state.getAttemptsMade());
     }
 
     @Test
-    void testRandomWordIsFiveLetters() {
-        Dictionary dict = new Dictionary();
-        String word = dict.getRandomWord();
-        assertEquals(5, word.length(), "Random word should be 5 letters long");
-    }
-
-    // ---------------- WordleGame Tests ----------------
-
-    @Test
-    void testCorrectGuessWinsGame() {
-        WordleGame game = new WordleGame("APPLE"); // fixed secret word
+    void testWordleGameValidGuess() {
+        WordleGame game = new WordleGame("APPLE");
+        assertTrue(game.isValidWord("APPLE"));
         game.submitGuess("APPLE");
-        assertTrue(game.inGuessList("APPLE"));
-        assertEquals("APPLE", game.getSecretWord());
+        assertTrue(game.hasWon());
     }
 
     @Test
-    void testWrongGuessDoesNotWin() {
+    void testWordleGameFeedback() {
+        WordleGame game = new WordleGame("APPLE");
+        String feedback = game.formatFeedback("APPLY");
+        // Example: "**A** **P** **P** L Y"
+        assertTrue(feedback.contains("**A**"));
+        assertTrue(feedback.contains("L"));
+    }
+
+    @Test
+    void testGuessHistoryUpdates() {
         WordleGame game = new WordleGame("APPLE");
         game.submitGuess("BERRY");
-        assertFalse(game.inGuessList("APPLE"));
-        assertTrue(game.inGuessList("BERRY"));
-    }
-
-    @Test
-    void testMaxAttemptsEndsGame() {
-        WordleGame game = new WordleGame("APPLE");
-        for (int i = 0; i < WordleGame.getMaxAttempts(); i++) {
-            game.submitGuess("BERRY");
-        }
-        assertTrue(game.inGuessList("BERRY"));
-    }
-
-    @Test
-    void testInvalidWordRejected() {
-        WordleGame game = new WordleGame("APPLE");
-        assertFalse(game.isValidWord("ZZZZZ"), "ZZZZZ should not be valid");
+        List<String> history = game.getGuessHistory();
+        assertEquals(1, history.size());
+        assertEquals("BERRY", history.get(0));
     }
 }

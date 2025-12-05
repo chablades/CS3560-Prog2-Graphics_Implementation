@@ -93,7 +93,7 @@
       <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CS3560-Prog2-Graphics_Implementation">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CS3560-Prog2-Graphics_Implementation" />
@@ -149,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in CS3560-Prog2-Graphics_Implementation" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in CS3560-Prog2-Graphics_Implementation" />
         <item itemvalue="JUnit.test in CS3560-Prog2-Graphics_Implementation" />
         <item itemvalue="JUnit.DictionaryTest" />
         <item itemvalue="JUnit.WordleGameTest" />

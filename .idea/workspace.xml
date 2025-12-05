@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="Implemented JUnit Tests">
+      <change afterPath="$PROJECT_DIR$/REPORT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/InputHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/GameLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/GameSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/GuessResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/InvalidGuessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/LetterFeedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/BoardView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/KeyboardView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/model/DictionaryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/model/GameStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/model/GuessResultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/model/LetterFeedbackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/model/WordleGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/controller/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/main/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/main/resources/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/WordleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/WordleGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/modelMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/SwingWordleView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/WordleUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/WordleView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/viewMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CS3560-Prog2-Graphics_Implementation/model/JvmTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/WordleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/WordleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/modelMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/SwingWordleView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/WordleUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/WordleView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/viewMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dictionary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/JvmTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;chablades&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/chablades/CS3560-Prog2-Graphics_Implementation&quot;,
+    &quot;accountId&quot;: &quot;45b67a7d-346a-4d8d-abb0-88344b918cfb&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="35l1j8s66QdHcY9bkG30kB92M0F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.modelMain.executor": "Run",
+    "Application.viewMain.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in CS3560-Prog2-Graphics_Implementation.executor": "Run",
+    "JUnit.All in test (1).executor": "Run",
+    "JUnit.All in test.executor": "Run",
+    "JUnit.DictionaryTest.executor": "Run",
+    "JUnit.GameStateTest.executor": "Run",
+    "JUnit.JvmTests.executor": "Run",
+    "JUnit.WordleGameTest.executor": "Run",
+    "JUnit.java in CS3560-Prog2-Graphics_Implementation.executor": "Run",
+    "JUnit.test in CS3560-Prog2-Graphics_Implementation.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nicol/IdeaProjects/CS3560-Prog2-Graphics_Implementation/src/main/test",
+    "onboarding.tips.debug.path": "C:/Users/nicol/IdeaProjects/CS3560-Prog2-Graphics_Implementation/src/main/test/java/model/src/Main.java",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation\src\main\test" />
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation\src\main\test\java\model" />
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation\src\main\test\java" />
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation\src\main\resources" />
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation\src" />
+      <recent name="C:\Users\nicol\IdeaProjects\CS3560-Prog2-Graphics_Implementation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.java in CS3560-Prog2-Graphics_Implementation">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CS3560-Prog2-Graphics_Implementation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DictionaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS3560-Prog2-Graphics_Implementation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.DictionaryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordleGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS3560-Prog2-Graphics_Implementation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.WordleGameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in CS3560-Prog2-Graphics_Implementation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS3560-Prog2-Graphics_Implementation" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test in CS3560-Prog2-Graphics_Implementation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS3560-Prog2-Graphics_Implementation" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.java in CS3560-Prog2-Graphics_Implementation" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.test in CS3560-Prog2-Graphics_Implementation" />
+        <item itemvalue="JUnit.DictionaryTest" />
+        <item itemvalue="JUnit.WordleGameTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="" />
+      <created>1763669978429</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763669978429</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Finished WorldGame.java&#10;&#10;Added dictionary.java and dictionary.txt with functionality to check if the word exists in the dictionary.&#10;&#10;&#10;Need to:&#10;&#10;Add JVM Tests&#10;Create GUI">
+      <option name="closed" value="true" />
+      <created>1763671107049</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763671107049</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Finished WorldGame.java&#10;&#10;Added dictionary.java and dictionary.txt with functionality to check if the word exists in the dictionary.&#10;&#10;&#10;Need to:&#10;&#10;Add JVM Tests&#10;Create GUI">
+      <option name="closed" value="true" />
+      <created>1763671150247</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763671150247</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implemented JUnit Tests">
+      <option name="closed" value="true" />
+      <created>1763682098888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763682098888</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implemented JUnit Tests">
+      <option name="closed" value="true" />
+      <created>1763682110475</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763682110475</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished WorldGame.java&#10;&#10;Added dictionary.java and dictionary.txt with functionality to check if the word exists in the dictionary.&#10;&#10;&#10;Need to:&#10;&#10;Add JVM Tests&#10;Create GUI" />
+    <MESSAGE value="Implemented JUnit Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented JUnit Tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/test/java/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,3 +1,10 @@
+HELLO
+WORLD
+LEVEL
+LEMON
+RADAR
+APPLE
+BERRY
 aahed
 aalii
 aargh

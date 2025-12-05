@@ -5,38 +5,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameState implements Serializable {
-    private final String secretWord;
-    private final List<String> guessHistory;
-    private final int maxAttempts;
-    private int attemptsMade;
-    private boolean gameOver;
-    private boolean hasWon;
+
+    private String secretWord;
+    private int maxAttempts;
+
+    private final List<String> guessHistory = new ArrayList<>();
+    private final List<LetterFeedback[]> feedbackHistory = new ArrayList<>();
 
     public GameState(String secretWord, int maxAttempts) {
         this.secretWord = secretWord.toUpperCase();
         this.maxAttempts = maxAttempts;
-        this.guessHistory = new ArrayList<>();
-        this.attemptsMade = 0;
-        this.gameOver = false;
-        this.hasWon = false;
     }
 
-    public void addGuess(String guess) {
+    public String getSecretWord() {
+        return secretWord;
+    }
+
+    public int getMaxAttempts() {
+        return maxAttempts;
+    }
+
+    public int getAttemptsMade() {
+        return guessHistory.size();
+    }
+
+    public boolean hasWon() {
+        if (guessHistory.isEmpty()) return false;
+        return guessHistory.get(guessHistory.size() - 1).equals(secretWord);
+    }
+
+    public boolean isGameOver() {
+        return hasWon() || getAttemptsMade() >= maxAttempts;
+    }
+
+    public void addGuess(String guess, LetterFeedback[] fb) {
         guessHistory.add(guess.toUpperCase());
-        attemptsMade++;
-        if (guess.equalsIgnoreCase(secretWord)) {
-            hasWon = true;
-            gameOver = true;
-        } else if (attemptsMade >= maxAttempts) {
-            gameOver = true;
-        }
+        feedbackHistory.add(fb);
     }
 
-    // --- Getters ---
-    public String getSecretWord() { return secretWord; }
-    public List<String> getGuessHistory() { return new ArrayList<>(guessHistory); }
-    public int getAttemptsMade() { return attemptsMade; }
-    public int getMaxAttempts() { return maxAttempts; }
-    public boolean isGameOver() { return gameOver; }
-    public boolean hasWon() { return hasWon; }
+    public List<String> getGuessHistory() {
+        return guessHistory;
+    }
+
+    public List<LetterFeedback[]> getFeedbackHistory() {
+        return feedbackHistory;
+    }
 }

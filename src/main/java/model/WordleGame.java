@@ -1,81 +1,95 @@
 package model;
 
-import java.util.List;
-import java.util.Objects;
-
 public class WordleGame {
+
     private GameState state;
     private final Dictionary dictionary;
 
-    public WordleGame(String secretWord) {
-        this.state = new GameState(secretWord, 6); // default maxAttempts = 6
-        this.dictionary = new Dictionary();
+    public WordleGame(String secretWord, Dictionary dictionary) {
+        this.state = new GameState(secretWord.toUpperCase(), 6);
+        this.dictionary = dictionary;
     }
 
-    // --- Core game loop methods ---
-    public void submitGuess(String guess) {
-        guess = guess.toUpperCase();
-        state.addGuess(guess);
+    public GameState getState() {
+        return state;
     }
 
-    public boolean isValidWord(String guess) {
+    public void setState(GameState newState) {
+        this.state = newState;
+    }
+
+    public String getSecretWord() {
+        return state.getSecretWord();
+    }
+
+    public int getMaxAttempts() {
+        return state.getMaxAttempts();
+    }
+
+    public boolean isGameOver() {
+        return state.isGameOver();
+    }
+
+    public boolean hasWon() {
+        return state.hasWon();
+    }
+
+    public int getAttemptsMade() {
+        return state.getAttemptsMade();
+    }
+
+    public GuessResult submitGuess(String guess) throws InvalidGuessException {
         guess = guess.toUpperCase();
 
         if (guess.length() != state.getSecretWord().length()) {
-            System.out.println("Invalid guess length. Try again.");
-            return false;
-        }
-
-        if (inGuessList(guess)) {
-            System.out.println(guess + " has already been guessed. Try again.");
-            return false;
+            throw new InvalidGuessException("Guess must be " + state.getSecretWord().length() + " letters.");
         }
 
         if (!dictionary.isValidWord(guess)) {
-            System.out.println("The word is not in this dictionary. Try again.");
-            return false;
+            throw new InvalidGuessException("Not a valid word.");
         }
 
-        return true;
+        if (state.getGuessHistory().contains(guess)) {
+            throw new InvalidGuessException("You already guessed that word.");
+        }
+
+        LetterFeedback[] fb = evaluateGuess(guess);
+        state.addGuess(guess, fb);
+
+        return new GuessResult(guess, fb);
     }
 
-    // --- Feedback formatting ---
-    public String formatFeedback(String guess) {
-        StringBuilder result = new StringBuilder();
-        String secretWord = state.getSecretWord();
+    private LetterFeedback[] evaluateGuess(String guess) {
+        String secret = state.getSecretWord();
+        int len = secret.length();
 
-        for (int i = 0; i < guess.length(); i++) {
+        LetterFeedback[] result = new LetterFeedback[len];
+        int[] secretCounts = new int[26];
+
+        for (char c : secret.toCharArray()) {
+            secretCounts[c - 'A']++;
+        }
+
+        for (int i = 0; i < len; i++) {
             char g = guess.charAt(i);
-            if (g == secretWord.charAt(i)) {
-                result.append("**").append(g).append("** "); // correct position
-            } else if (secretWord.contains(String.valueOf(g))) {
-                result.append("*").append(g).append("* ");   // wrong position
+            if (g == secret.charAt(i)) {
+                result[i] = LetterFeedback.CORRECT;
+                secretCounts[g - 'A']--;
+            }
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (result[i] != null) continue;
+
+            char g = guess.charAt(i);
+            if (secretCounts[g - 'A'] > 0) {
+                result[i] = LetterFeedback.PRESENT;
+                secretCounts[g - 'A']--;
             } else {
-                result.append(g).append(" ");                // not in word
+                result[i] = LetterFeedback.ABSENT;
             }
         }
-        return result.toString().trim();
+
+        return result;
     }
-
-    // --- Helpers ---
-    public boolean inGuessList(String guess) {
-        for (String pastGuess : state.getGuessHistory()) {
-            if (Objects.equals(pastGuess, guess)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // --- Getters for UI/Controller ---
-    public List<String> getGuessHistory() { return state.getGuessHistory(); }
-    public String getSecretWord() { return state.getSecretWord(); }
-    public int getAttemptsMade() { return state.getAttemptsMade(); }
-    public int getMaxAttempts() { return state.getMaxAttempts(); }
-    public boolean isGameOver() { return state.isGameOver(); }
-    public boolean hasWon() { return state.hasWon(); }
-
-    // --- Persistence support ---
-    public GameState getState() { return state; }
-    public void setState(GameState newState) { this.state = newState; }
 }

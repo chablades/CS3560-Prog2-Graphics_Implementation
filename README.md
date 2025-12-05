@@ -8,7 +8,7 @@
 1. Clone the repository:
    git clone https://github.com/chablades/CS3560-Prog2-Graphics_Implementation
 
-2. Open the project in IntelliJ.
+2. Open the project in IntelliJ OR through console
 
 3. Run the main class:
    src/main/java/Main.java

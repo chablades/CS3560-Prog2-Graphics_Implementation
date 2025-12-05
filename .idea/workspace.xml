@@ -4,50 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="Implemented JUnit Tests">
-      <change afterPath="$PROJECT_DIR$/REPORT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/InputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/GameLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/GameSaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/GuessResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/InvalidGuessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/LetterFeedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/BoardView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/KeyboardView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/model/DictionaryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/model/GameStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/model/GuessResultTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/model/LetterFeedbackTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/model/WordleGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/controller/GameController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/main/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/main/resources/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/GameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/WordleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/WordleGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/model/modelMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/SwingWordleView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/WordleUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/WordleView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CS3560-Prog2-Graphics_Implementation/view/viewMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CS3560-Prog2-Graphics_Implementation/model/JvmTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/WordleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/WordleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/modelMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SwingWordleView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WordleUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WordleView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/viewMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/java/JvmTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,13 +197,30 @@
       <option name="project" value="LOCAL" />
       <updated>1763682110475</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
+      <option name="closed" value="true" />
+      <created>1764908784117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764908784117</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
+      <option name="closed" value="true" />
+      <created>1764908792246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764908792246</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finished WorldGame.java&#10;&#10;Added dictionary.java and dictionary.txt with functionality to check if the word exists in the dictionary.&#10;&#10;&#10;Need to:&#10;&#10;Add JVM Tests&#10;Create GUI" />
     <MESSAGE value="Implemented JUnit Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented JUnit Tests" />
+    <MESSAGE value="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

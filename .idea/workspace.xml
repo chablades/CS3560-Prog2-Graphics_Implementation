@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="4b722f51-f050-4f0d-b9a4-49a38313b6c8" name="Changes" comment="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764908792246</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
+      <option name="closed" value="true" />
+      <created>1764909057438</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764909057438</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactored and finalized full Wordle MVC architecture&#10;&#10;- Rebuilt model layer (WordleGame, GameState, GuessResult, Dictionary, LetterFeedback)&#10;- Implemented correct Wordle evaluation logic with duplicate-letter handling&#10;- Added dictionary validation and ensured uppercase normalization&#10;- Fixed row-handling logic by moving active-row tracking into GameController&#10;- Replaced updateCurrentRow() with updateRow(row, guess) for stable UI behavior&#10;- Rewrote BoardView to eliminate row-jumping and color persistence bugs&#10;- Rebuilt KeyboardView with proper color precedence and reloadFromState()&#10;- Cleaned up MainFrame: focus handling, menu actions, save/load integration&#10;- Updated Input">
+      <option name="closed" value="true" />
+      <created>1764909166638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764909166638</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
